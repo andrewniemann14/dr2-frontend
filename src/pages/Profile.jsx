@@ -27,13 +27,16 @@ function Profile() {
 
   return (
     <div className='m-auto'>
-      <Link to="/" className='underline'>Go Home</Link>
       <ProfileSummary name={name} overallScore={overallScore} nationality={nationality} />
       <table className='m-auto table-auto border-separate [border-spacing:0.75rem]'>
         <thead>
           <tr>
-
-          </tr>
+              <td>Challenge #</td>
+              <td>Date</td>
+              <td>Stage</td>
+              <td>Vehicle</td>
+              <td>Score</td>
+            </tr>
         </thead>
         <tbody>
         {entries.map(e => {
@@ -43,7 +46,6 @@ function Profile() {
               <td>{e['start'].split('T')[0]}</td>
               <td><Link to={`/profile/${name}/stage/${e['stage']}`}>{e['stage']}</Link></td> {/* two pages: personal top 10 and global top 100 (distinct names) */}
               <td>{e['vehicle']}</td>
-              <td>{e['time']}</td>
               <td>{e['score']}</td>
             </tr>
           )
