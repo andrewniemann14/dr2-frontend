@@ -1,6 +1,7 @@
 // TODO: learn and use status == loading in all pages
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import HomeBanner from '../components/HomeBanner';
 import TableChallenges from '../components/TableChallenges';
 
 function Home() {
@@ -13,13 +14,11 @@ function Home() {
       .then(data => setChallenges(data))
   }, []);
 
-
+// TODO: make it a grid layout
+// add top 10 from leaderboard, and personal rating, as minor elements
   return (
     <div>
-      <div className="h-64 w-full text-center flex flex-col justify-center">
-        <h1 className='text-5xl'>DiRT Rally 2.0</h1>
-        <h2 className='text-6xl'>Dashboard</h2>
-      </div>
+      <HomeBanner />
       <br />
       <h3 className='text-2xl text-center'>Current challenges</h3>
       <TableChallenges challenges={challenges.slice(0,2)} />
