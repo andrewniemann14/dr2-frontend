@@ -17,12 +17,12 @@ ReactDOM.render(
     <NavBar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="challenge/:id" element={<Challenge />} />
       <Route path="leaderboard" element={<Leaderboard />} />
+      <Route path="challenge/:id" element={<Challenge />} />
+      <Route path="stage/:stage" element={<StageGlobal />} />
       <Route path="profile/:name" element={<Profile />} />
       <Route path="profile/:name/stage/:stage" element={<StagePersonal />} />
       <Route path="profile/:name/challenge/:id" element={<ChallengePersonal />} />
-      <Route path="stage/:stage" element={<StageGlobal />} />
     </Routes>
     <Footer />
   </BrowserRouter>,
