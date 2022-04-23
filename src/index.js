@@ -9,7 +9,7 @@ import Leaderboard from './pages/Leaderboard';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import StageGlobal from './pages/StageGlobal';
-import ChallengePersonal from './pages/ChallengePersonal';
+// import ChallengePersonal from './pages/ChallengePersonal';
 import StagePersonal from './pages/StagePersonal';
 
 ReactDOM.render(
@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="stage/:stage" element={<StageGlobal />} />
       <Route path="profile/:name" element={<Profile />} />
       <Route path="profile/:name/stage/:stage" element={<StagePersonal />} />
-      <Route path="profile/:name/challenge/:id" element={<ChallengePersonal />} />
+      {/* <Route path="profile/:name/challenge/:id" element={<ChallengePersonal />} /> */}
     </Routes>
     <Footer />
   </BrowserRouter>,
