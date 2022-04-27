@@ -17,9 +17,9 @@ function TableGlobalHiScores({entries}) {
         return(
           <tr key={`${e['name']}`} className="">
             <td className='text-center'>{e['time']}</td>
-            <td className='font-bold'><Link to={`/profile/${e['name']}`}>{e['name']}</Link></td>
+            <td className='font-bold'><Link to={`/profile/${e['name']}`} className='hover:underline'>{e['name']}</Link></td>
             <td>{e['vehicle']}</td>
-            <td className='text-center'><Link to={`/challenge/${e['id']}`}>{e['id']}</Link></td>
+            <td className='text-center'><Link to={`/challenge/${e['id']}`} className='hover:underline'>{e['id']}</Link></td>
             <td className='text-center'>{e['start'].split('T')[0]}</td>
           </tr>
         )
