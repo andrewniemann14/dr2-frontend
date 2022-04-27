@@ -1,10 +1,14 @@
 // TODO: learn and use status == loading in all pages
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import HomeBanner from '../components/HomeBanner';
-import TableChallenges from '../components/TableChallenges';
 
-function Home() {
+import HomeBanner from '../components/home/HomeBanner';
+import TableChallenges from '../components/TableChallenges';
+import MiniProfile from '../components/home/MiniProfile';
+import CurrentChallenges from '../components/home/CurrentChallenges';
+import RecentChallenges from '../components/home/RecentChallenges';
+
+export default function Home() {
   const [challenges, setChallenges] = useState([]);
 
   useEffect(() => {
@@ -14,19 +18,25 @@ function Home() {
       .then(data => setChallenges(data))
   }, []);
 
-// TODO: make it a grid layout
-// add top 10 from leaderboard, and personal rating, as minor elements
+  const [name, setName] = useState(localStorage.getItem('playerName'));
+
+  function changeName(string) {
+    setName(string);
+  }
+
+  // TODO: add top 10 from leaderboard
   return (
-    <div>
+    <div className='bg-neutral-700 text-white min-h-screen grid lg:grid-cols-8'>
       <HomeBanner />
+      <MiniProfile />
       <br />
-      <h3 className='text-2xl text-center'>Current challenges</h3>
-      <TableChallenges challenges={challenges.slice(0,2)} />
-      <h3 className='text-2xl text-center'>Recent challenges</h3>
-      <TableChallenges challenges={challenges.slice(2)} />
+      <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
+        <CurrentChallenges allChallenges={challenges} />
+      </div>
       <br />
+      <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
+        <RecentChallenges allChallenges={challenges} />
+      </div>
     </div>
   )
 }
-
-export default Home
