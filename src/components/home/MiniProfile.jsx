@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 
 import ScoreRing from "../ScoreRing"
+import NameChanger from "./NameChanger";
 
 
-export default function MiniProfile() {
-  const [name, setName] = useState(localStorage.getItem('playerName'));
+export default function MiniProfile({name, changeName, clearCookie}) {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
@@ -17,26 +17,23 @@ export default function MiniProfile() {
       })
   }, [name])
 
-  const clickF = () => {
-    setName('8ourne');
-    localStorage.setItem('playerName', '8ourne')
+  function clearName(e) {
+    e.preventDefault();
+    setScore(0);
+    clearCookie();
   }
 
-  const clearCookies = () => {
-    localStorage.removeItem('playerName');
-    setName(null);
-  }
 
   // TODO: convert to a drop down from the NavBar profile, which will be name+score
   return (
-    <div className='col-start-8 border-2 flex flex-col text-center'>
+    <div className='col-start-8 border-2 flex flex-col items-center'>
       <div className="w-16 h-16 bg-neutral-800 mx-auto my-2 text-2xl flex justify-center items-center">
         <ScoreRing score={score} precision={2} />
       </div>
       <Link to={`/profile/${name}`} className='hover:text-red-600 hover:underline'>{name}</Link>
       <Link to="/identify" className='hover:text-red-600 hover:underline'>Identify</Link>
-      <button onClick={clickF}>set name</button>
-      <button onClick={clearCookies}>clear name</button>
+      <NameChanger name={name} changeName={changeName} />
+      <button onClick={clearName}>clear name</button>
     </div>
   )
 }

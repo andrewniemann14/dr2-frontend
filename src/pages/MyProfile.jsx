@@ -5,8 +5,8 @@ import ScoreColumn from '../components/ScoreColumn'
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
 
-export default function Profile() {
-  const { name } = useParams();
+export default function MyProfile() {
+  const name = localStorage.getItem('playerName');
   const [entries, setEntries] = useState([]);
   const [nationality, setNationality] = useState('loading');
   const [recentScore, setRecentScore] = useState(0);
