@@ -44,11 +44,11 @@ export default function Home() {
       <MiniProfile name={name} changeName={changeName} clearCookie={clearCookie} />
       <br />
       <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
-        <CurrentChallenges allChallenges={challenges} />
+        <CurrentChallenges allChallenges={challenges} name={name} />
       </div>
       <br />
       <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
-        <RecentChallenges allChallenges={challenges} />
+        <RecentChallenges allChallenges={challenges} name={name} />
       </div>
     </div>
   )

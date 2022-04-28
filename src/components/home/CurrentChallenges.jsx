@@ -1,6 +1,6 @@
 import TableChallenges from '../TableChallenges';
 
-export default function CurrentChallenges({allChallenges}) {
+export default function CurrentChallenges({allChallenges, name}) {
 
   // TODO: show global record, personal best for each stage+class combo
   return (
