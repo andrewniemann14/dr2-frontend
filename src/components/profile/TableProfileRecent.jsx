@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ScoreColumn from '../ScoreColumn';
+import ScoreSpan from '../ScoreSpan';
 
 export default function TableProfileRecent({name, entries}) {
   return (
@@ -21,7 +21,7 @@ export default function TableProfileRecent({name, entries}) {
             <td>{e.start.split('T')[0]}</td>
             <td><Link to={`/profile/${name}/stage/${e.stage}`}>{e.stage}</Link></td> {/* two pages: personal top 10 and global top 100 (distinct names) */}
             <td>{e.vehicle}</td>
-            <ScoreColumn score={e.score} precision={3} />
+            <ScoreSpan score={e.score} precision={3} />
           </tr>
         )
       })}

@@ -17,12 +17,12 @@ const ProfileSummary = ({name, nationality, recentScore, points}) => {
         <h1 className='text-4xl sm:text-7xl text-center ml-2 mr-8'>{name}</h1>
         
         {/* SCORE */}
-        <div className="text-4xl lg:text-7xl">
-          <ScoreRing score={recentScore} precision={3} />
+        <div className="text-4xl lg:text-7xl mb-[-.25em]">
+          <ScoreRing score={recentScore} precision={3} points={Math.floor(points)} />
+          {/* <p className="text-[.5em] relative bottom-[1em] text-center bg-black text-white rounded-t-full">{Math.floor(points)}</p> */}
         </div>
 
       </div>
-      <p>{points}</p>
     </div>
   )
 }

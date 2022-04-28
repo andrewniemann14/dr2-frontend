@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ClassString from '../components/ClassString';
-import ScoreColumn from '../components/ScoreColumn'
+import ScoreSpan from '../components/ScoreSpan';
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
 
@@ -96,7 +96,7 @@ export default function MyProfile() {
             return (
             <tr key={i}>
               <td><ClassString vehicle_class={c.class} /></td>
-              <ScoreColumn score={c.score} precision={3} />
+              <ScoreSpan score={c.score} precision={3} />
             </tr>
             )
           })}
@@ -112,7 +112,7 @@ export default function MyProfile() {
             return (
             <tr key={i}>
               <td>{c.country}</td>
-              <ScoreColumn score={c.score} precision={3} />
+              <ScoreSpan score={c.score} precision={3} />
             </tr>
             )
           })}
