@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import ClassString from '../components/ClassString';
 
 function Challenge() {
   let { id } = useParams();
@@ -24,9 +25,9 @@ function Challenge() {
   let stage, date, vehicle_class, dnfRate, averageScore;
   try {
     console.log(challenge);
-    stage = challenge['stage'];
-    date = challenge['start'].split('T')[0];
-    vehicle_class = challenge['vehicle_class'].replace('eRally', '').replace('Caps', '');
+    stage = challenge.stage;
+    date = challenge.start.split('T')[0];
+    vehicle_class = challenge.vehicle_class;
   } catch {
     
   }
@@ -51,7 +52,7 @@ function Challenge() {
           <h2 className='text-xs'>{date}</h2>
         </div>
         <h2 className='text-xl'>{stage}</h2>
-        <h2 className='text-xl'>{vehicle_class}</h2>
+        <h2 className='text-xl'><ClassString vehicle_class={vehicle_class} /></h2>
         <div>
           <h2>DNF rate: {dnfRate}%</h2>
           <h2>Average score: {averageScore}</h2>
