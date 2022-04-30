@@ -22,7 +22,7 @@ export default function ScoreSpan({score, precision}) {
       return (
         <span className='text-violet-500'>{scoreNum.toPrecision(precision)}</span>
       )
-    case (scoreNum < 100):
+    case (scoreNum <= 100):
       return (
         <span className='text-amber-500'>{scoreNum.toPrecision(precision)}</span>
       )

@@ -46,7 +46,7 @@ export default function ScoreRing({score, precision, points}) {
         <p className="bg-violet-700 text-neutral-800 font-oswald text-[.25em] text-center relative bottom-[1em] rounded-t-full">{points}</p>
         </>
       )
-    case (scoreNum < 100):
+    case (scoreNum <= 100):
       return (
         <>
         <div className="text-amber-600 border-amber-600 bg-neutral-900 border-[.1em] rounded-full h-0 w-[2em] pb-[2em] flex items-center justify-center">
