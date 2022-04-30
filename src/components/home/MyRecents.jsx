@@ -4,15 +4,17 @@ import ScoreSpan from "../ScoreSpan"
 
 export default function MyRecents({results}) {
   return (
-    <ul>
+    <table className='table-auto'>
+      <tbody>
       {results.map((r, i) => {
         return (
-          <li key={i} className='flex flex-row justify-between'>
-            <Link to={`/challenge/${r.id}`} className='hover:text-red-600 hover:underline'>{r.id}</Link>
-            <ScoreSpan score={r.score} precision={3} />
-          </li>
+          <tr key={i} className=''>
+            <td><Link to={`/challenge/${r.id}`} className='hover:text-red-600 hover:underline'>{r.id}</Link></td>
+            <td><ScoreSpan score={r.score} precision={3} /></td>
+          </tr>
         )
       })}
-    </ul>
+      </tbody>
+    </table>
   )
 }
