@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LogoHome() {
   return (
-    <div className="col-start-4 col-span-2 flex flex-col items-center p-8 select-none">
+    <div className="col-start-3 col-span-2 flex flex-col items-center p-8 select-none">
       <div className='flex flex-row items-center mb-0'>
         <div>
           <h1 className='text-3xl sm:text-5xl text-right font-alfa-slab-one'>DIRT</h1>

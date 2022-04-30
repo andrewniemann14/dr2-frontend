@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {solid} from '@fortawesome/fontawesome-svg-core/import.macro'
 
 import ScoreRing from "../ScoreRing"
 import MyRecents from "./MyRecents";
@@ -29,18 +32,15 @@ export default function MiniProfile({name, changeName, clearCookie}) {
 
   // TODO: convert to a drop down from the NavBar profile, which will be name+score
   return (
-    <div className='col-start-8 bg-neutral-800 flex flex-col items-center'>
+    <div className='lg:col-start-6 bg-neutral-800 flex flex-col items-center'>
       <Link to={`/profile/${name}`} className=''>
-      <div className="w-16 h-16 bg-neutral-800 mx-auto my-2 text-2xl flex justify-center items-center">
-        <ScoreRing score={score} precision={2} />
-      </div>
-      {name}</Link>
-      <NameChanger name={name} changeName={changeName} />
-      <Link to="/identify" className='hover:text-red-600 hover:underline'>Search</Link>
-      <button onClick={clearName}>clear name</button>
-      <ul>
-        <MyRecents results={recentResults} />
-      </ul>
+        <div className="w-16 h-16 bg-neutral-800 mx-auto my-2 text-2xl flex justify-center items-center">
+          <ScoreRing score={score} precision={2} />
+        </div>
+      </Link>
+      <NameChanger name={name} changeName={changeName} clearName={clearName} />
+      <h4 className='text-teal-300'>Last Challenges</h4>
+      <MyRecents results={recentResults} />
     </div>
   )
 }

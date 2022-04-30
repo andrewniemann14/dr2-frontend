@@ -39,15 +39,15 @@ export default function Home() {
 
   // TODO: add top 10 from leaderboard
   return (
-    <div className='bg-neutral-700 text-white min-h-screen grid lg:grid-cols-8'>
+    <div className='bg-neutral-700 text-white min-h-screen lg:grid lg:grid-cols-6'>
       <HomeBanner />
       <MiniProfile name={name} changeName={changeName} clearCookie={clearCookie} />
       <br />
-      <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
+      <div className='lg:col-start-3 col-span-2 rounded-lg bg-neutral-800 shadow-lg border-2'>
         <CurrentChallenges allChallenges={challenges} name={name} />
       </div>
       <br />
-      <div className='lg:col-start-3 col-span-4 rounded-lg bg-neutral-800 shadow-lg border-2'>
+      <div className='lg:col-start-3 col-span-2 rounded-lg bg-neutral-800 shadow-lg border-2'>
         <RecentChallenges allChallenges={challenges} name={name} />
       </div>
     </div>
