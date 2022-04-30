@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import ScoreSpan from '../ScoreSpan';
+import { ScoreColorText } from '../ScoreColors';
 
 export default function TableProfileRecent({name, entries}) {
+  
   return (
     <table className='m-auto table-auto border-separate [border-spacing:0.75rem]'>
       <thead>
@@ -15,13 +16,14 @@ export default function TableProfileRecent({name, entries}) {
       </thead>
       <tbody>
       {entries.map(e => {
+        const color = ScoreColorText(e.score);
         return(
           <tr key={`${e.id}`} className="">
             <td><Link to={`/challenge/${e['id']}`}>{e['id']}</Link></td>
             <td>{e.start.split('T')[0]}</td>
             <td><Link to={`/profile/${name}/stage/${e.stage}`}>{e.stage}</Link></td> {/* two pages: personal top 10 and global top 100 (distinct names) */}
             <td>{e.vehicle}</td>
-            <ScoreSpan score={e.score} precision={3} />
+            <td className={`${color}`}>{e.score}</td>
           </tr>
         )
       })}

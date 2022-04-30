@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ClassString from '../components/ClassString';
-import ScoreSpan from '../components/ScoreSpan';
+import { ScoreColorText } from '../components/ScoreColors';
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
 
 export default function MyProfile() {
+  // TODO: switch between params and props to get name
+  // const { name } = useParams();
   const name = localStorage.getItem('playerName');
   const [entries, setEntries] = useState([]);
   const [nationality, setNationality] = useState('loading');
@@ -93,10 +95,11 @@ export default function MyProfile() {
         <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
         <tbody>
           {classScores.map((c, i) => {
+            const color = ScoreColorText(c.score);
             return (
             <tr key={i}>
               <td><ClassString vehicle_class={c.class} /></td>
-              <ScoreSpan score={c.score} precision={3} />
+              <td className={`${color}`}>{c.score}</td>
             </tr>
             )
           })}
@@ -109,10 +112,11 @@ export default function MyProfile() {
         <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
         <tbody>
           {countryScores.map((c, i) => {
+            const color = ScoreColorText(c.score);
             return (
             <tr key={i}>
               <td>{c.country}</td>
-              <ScoreSpan score={c.score} precision={3} />
+              <td className={`${color}`}>{c.score}</td>
             </tr>
             )
           })}

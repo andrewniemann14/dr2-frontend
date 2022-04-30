@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
 import Home from "./pages/Home.jsx";
 import Challenge from './pages/Challenge';
-import Profile from "./pages/Profile.jsx";
 import MyProfile from "./pages/MyProfile.jsx";
 import Leaderboard from './pages/Leaderboard';
 import Footer from './components/Footer';
@@ -23,7 +22,6 @@ root.render(
       <Route path="leaderboard" element={<Leaderboard />} />
       <Route path="identify" element={<PlayerSelect />} />
       <Route path="profile" element={<MyProfile />} />
-      <Route path="profile/:name" element={<Profile />} />
       <Route path="challenge/:id" element={<Challenge />} />
       <Route path="stage/:stage" element={<StageGlobal />} />
       <Route path="profile/:name/stage/:stage" element={<StagePersonal />} />
