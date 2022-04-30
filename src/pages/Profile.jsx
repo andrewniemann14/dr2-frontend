@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ClassString from '../components/ClassString';
 import { ScoreColorText } from '../components/ScoreColors';
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
 
-export default function MyProfile() {
-  // TODO: switch between params and props to get name
-  // const { name } = useParams();
-  const name = localStorage.getItem('playerName');
+export default function Profile() {
+  let { name } = useParams();
+  if (!name) {
+    name = localStorage.getItem('playerName');
+  }
+
   const [entries, setEntries] = useState([]);
   const [nationality, setNationality] = useState('loading');
   const [recentScore, setRecentScore] = useState(0);
@@ -65,7 +67,7 @@ export default function MyProfile() {
         setCountryScores(scoredCountries.sort((a, b) => b.score - a.score))
       }
     )
-  }, []);
+  }, [name]);
 
   const [points, setPoints] = useState(0);
   useEffect(() => {
