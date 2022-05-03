@@ -87,12 +87,14 @@ export default function Profile() {
       <ProfileSummary name={name} nationality={nationality} recentScore={recentScore} points={points} />
 
       <div className="flex flex-col md:flex-row content-start">
-      <div className='rounded-lg bg-neutral-800 w-fit m-auto shadow-lg border-2'>
-        <h3 className="text-4xl text-center">Recent challenges</h3>
+      <div className='md:rounded-lg bg-neutral-800 w-fit m-auto shadow-lg border-t-2 md:border-2'>
+        <h3 className="text-2xl md:text-4xl text-center">Recent challenges</h3>
         <TableProfileRecent name={name} entries={entries.slice(0, 10)} />
       </div>
+      
+      <Link to={`/profile/${name}/challenges`} className='m-auto'>All challenges</Link>
 
-      <div className='rounded-lg bg-neutral-800 w-fit m-auto shadow-lg border-2 p-4'>
+      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2 p-4'>
         <h3 className="text-4xl text-center">Class scores</h3>
         <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
         <tbody>
@@ -100,7 +102,7 @@ export default function Profile() {
             const color = ScoreColorText(c.score);
             return (
             <tr key={i}>
-              <td><ClassString vehicle_class={c.class} /></td>
+              <td>{ClassString(c.class)}</td>
               <td className={`${color}`}>{c.score}</td>
             </tr>
             )
@@ -109,7 +111,7 @@ export default function Profile() {
         </table>
       </div>
 
-      <div className='rounded-lg bg-neutral-800 w-fit m-auto shadow-lg border-2 p-4'>
+      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2 p-4'>
         <h3 className="text-4xl text-center">Country scores</h3>
         <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
         <tbody>
@@ -127,7 +129,6 @@ export default function Profile() {
       </div>
       </div>
 
-      <Link to={`/profile/${name}/challenges`} className='m-auto'>All challenges</Link>
     </div>
   )
 }
