@@ -8,7 +8,7 @@ export default function ScoreDisplay({score, precision, points}) {
   const colorText = ScoreColorText(score);
   return (
     <div>
-      <p className={`relative top-[6.5rem] text-center text-6xl ${colorText}`}>{score}</p>
+      <p className={`relative top-[6.5rem] text-center font-oswald text-6xl ${colorText}`}>{score}</p>
       <ScoreSvg className={`h-48 fill-neutral-900 stroke-[5] ${colorStroke}`} />
     </div>
     // <div>
