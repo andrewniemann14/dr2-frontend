@@ -1,26 +1,26 @@
-export default function ClassString({vehicle_class}) {
+export default function ClassString(vehicle_class) {
   switch (vehicle_class) {
     case 'eRallyH1FwdCaps':
-      return <>H1 FWD</>
+      return 'H1 FWD'
     case 'eRallyH2FwdCaps':
-      return <>H2 FWD</>
+      return 'H2 FWD'
     case 'eRallyH2RwdCaps':
-      return <>H2 RWD</>
+      return 'H2 RWD'
     case 'eRallyH3RwdCaps':
-      return <>H3 RWD</>
+      return 'H3 RWD'
     case 'eRallyGrpB4wdCaps':
-      return <>Grp B</>
+      return 'Grp B'
     case 'eRallyGrpACaps':
-      return <>Grp A</>
+      return 'Grp A'
     case 'eRallyR2Caps':
-      return <>R2</>
+      return 'R2'
     case 'eRallyNr4R4Caps':
-      return <>NR4/R4</>
+      return 'NR4/R4'
     case 'eRallyR5Caps':
-      return <>R5</>
+      return 'R5'
     case 'eRallyRGtCaps':
-      return <>R-GT</>
+      return 'R-GT'
     default:
-      return <>--</>
+      return '--'
   }
 }
