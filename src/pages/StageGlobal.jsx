@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import ClassString from '../components/ClassString';
+import {ClassStringLong} from '../components/ClassString';
 import StageHeader from '../components/StageHeader';
 import TableHighScores from '../components/TableHighScores';
 
@@ -25,7 +25,7 @@ function StageGlobal() {
       <Link to={`/profile/8ourne/stage/${stage}`}>Switch to personal</Link>
       <div>
         <StageHeader country={country} stage={stage} />
-        <h3 className='text-center'><ClassString vehicle_class={vehicleClass} /></h3>
+        <h3 className='text-center'>{ClassStringLong(vehicleClass)}</h3>
       </div>
       <div>
         {/* TODO: change stage too */}

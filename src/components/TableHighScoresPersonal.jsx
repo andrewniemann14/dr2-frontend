@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ClassString from './ClassString';
+import {ClassStringLong} from './ClassString';
 
 export default function TableHighScoresPersonal({entries}) {
   return (
@@ -18,7 +18,7 @@ export default function TableHighScoresPersonal({entries}) {
         return(
           <tr key={`${e['name']}`} className="">
             <td className='text-center'>{e['time']}</td>
-            <td><ClassString vehicle_class={e.vehicle_class} /></td>
+            <td>{ClassStringLong(e.vehicle_class)}</td>
             <td>{e['vehicle']}</td>
             <td className='text-center'><Link to={`/challenge/${e['id']}`}>{e['id']}</Link></td>
             <td className='text-center'>{e['start'].split('T')[0]}</td>

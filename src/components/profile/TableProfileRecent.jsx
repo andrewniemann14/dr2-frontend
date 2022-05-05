@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ClassString from '../ClassString';
+import {ClassStringLong} from '../ClassString';
 import { ScoreColorText } from '../ScoreColors';
 
 export default function TableProfileRecent({name, entries}) {
@@ -26,7 +26,7 @@ export default function TableProfileRecent({name, entries}) {
             <td className='hidden md:visible'>{e.start.split('T')[0]}</td>
             <img src={require(`../../img/flags/${e.country}.png`)} alt={`${e.country} flag`} className='h-4 w-8' />
             <td className='hidden md:visible'><Link to={`/profile/${name}/stage/${e.stage}`}>{e.stage}</Link></td> {/* two pages: personal top 10 and global top 100 (distinct names) */}
-            <td>{ClassString(e.vehicle_class)}</td>
+            <td>{ClassStringLong(e.vehicle_class)}</td>
             <td className='hidden md:visible'>{e.vehicle}</td>
             <td className={`${color}`}>{e.score}</td>
           </tr>

@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import ClassString from '../components/ClassString';
+import {ClassStringLong} from '../components/ClassString';
 
 function Challenge() {
   let { id } = useParams();
@@ -52,7 +52,7 @@ function Challenge() {
           <h2 className='text-xs'>{date}</h2>
         </div>
         <h2 className='text-xl'>{stage}</h2>
-        <h2 className='text-xl'><ClassString vehicle_class={vehicle_class} /></h2>
+        <h2 className='text-xl'>{ClassStringLong(vehicle_class)}</h2>
         <div>
           <h2>DNF rate: {dnfRate}%</h2>
           <h2>Average score: {averageScore}</h2>
