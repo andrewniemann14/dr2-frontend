@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import {ClassStringShort} from '../ClassString'
 import {ScoreColorText} from '../ScoreColors'
 
 export default function MyRecents({results}) {
@@ -10,8 +11,9 @@ export default function MyRecents({results}) {
         const colorText = ScoreColorText(r.score)
         return (
           <tr key={i} className=''>
-            <td><Link to={`/challenge/${r.id}`} className='hover:text-red-600 hover:underline'>{r.id}</Link></td>
-            <td className={`${colorText}`}>{r.score}</td>
+            <td><Link to={`/challenge/${r.id}`} className='hover:text-red-600'>#{r.id}</Link></td>
+            <td className='text-center'>{ClassStringShort(r.vehicle_class)}</td>
+            <td className={`${colorText} text-right`}>{r.score}</td>
           </tr>
         )
       })}

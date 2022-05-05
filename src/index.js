@@ -7,7 +7,7 @@ import Challenge from './pages/Challenge';
 import Profile from "./pages/Profile.jsx";
 import Leaderboard from './pages/Leaderboard';
 import Footer from './components/Footer';
-import NavBar from './components/NavBar';
+import NavBar from './components/navbar/NavBar';
 import StageGlobal from './pages/StageGlobal';
 // import ChallengePersonal from './pages/ChallengePersonal';
 import StagePersonal from './pages/StagePersonal';

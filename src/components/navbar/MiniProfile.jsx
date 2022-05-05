@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import ScoreRing from "./ScoreRing"
+import ScoreRing from "../home/ScoreRing"
 import MyRecents from "./MyRecents";
-import NameChanger from "./NameChanger";
+import NameChanger from "../home/NameChanger";
 
 
 export default function MiniProfile({name, changeName, clearCookie}) {
@@ -29,14 +29,14 @@ export default function MiniProfile({name, changeName, clearCookie}) {
 
   // TODO: convert to a drop down from the NavBar profile, which will be name+score
   return (
-    <div className='lg:col-start-6 bg-neutral-800 flex flex-col items-center'>
+    <div className='bg-neutral-800 flex flex-col border-[1px] border-white p-4'>
       <Link to={`/profile`} className=''>
-        <div className="w-16 h-16 bg-neutral-800 mx-auto my-2 text-2xl flex justify-center items-center">
+        <div className="w-16 h-16 bg-neutral-800 mx-auto my-4 text-3xl flex justify-center items-center">
           <ScoreRing score={score} precision={2} />
         </div>
       </Link>
       <NameChanger name={name} changeName={changeName} clearName={clearName} />
-      <h4 className='text-teal-300'>Last Challenges</h4>
+      <h4 className='text-red-600 mt-6 text-center'>Last Challenges</h4>
       <MyRecents results={recentResults} />
     </div>
   )
