@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import ClassString from '../components/ClassString';
+import {ClassStringLong} from '../components/ClassString';
 import { ScoreColorText } from '../components/ScoreColors';
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
@@ -87,7 +87,7 @@ export default function Profile() {
       <ProfileSummary name={name} nationality={nationality} recentScore={recentScore} points={points} />
 
       <div className="flex flex-col md:flex-row content-start">
-      <div className='md:rounded-lg bg-neutral-800 w-fit m-auto shadow-lg border-t-2 md:border-2'>
+      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2'>
         <h3 className="text-2xl md:text-4xl text-center">Recent challenges</h3>
         <TableProfileRecent name={name} entries={entries.slice(0, 10)} />
       </div>
@@ -102,7 +102,7 @@ export default function Profile() {
             const color = ScoreColorText(c.score);
             return (
             <tr key={i}>
-              <td>{ClassString(c.class)}</td>
+              <td>{ClassStringLong(c.class)}</td>
               <td className={`${color}`}>{c.score}</td>
             </tr>
             )
