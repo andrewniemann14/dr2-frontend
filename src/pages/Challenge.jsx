@@ -19,7 +19,7 @@ function Challenge() {
     fetch(`https://data.niemann.app/dr2/index.php/leaderboard?id=${id}`)
       .then(res => res.json())
       .then(data => setEntries(data))
-  }, []);
+  }, [id]);
 
   // sticking everything in a try/catch block or it crashes before useEffect can even run
   let stage, date, vehicle_class, dnfRate, averageScore;
@@ -45,7 +45,7 @@ function Challenge() {
 
 
   return (
-    <div>
+    <div className='bg-neutral-700 text-white'>
       <div className='flex flex-row items-center justify-center space-x-8'>
         <div>
           <h2 className='text-xl'>{id}</h2>

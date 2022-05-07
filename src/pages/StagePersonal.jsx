@@ -3,8 +3,8 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import StageHeader from '../components/StageHeader';
-import TableHighScoresPersonal from '../components/TableHighScoresPersonal';
+import StageHeader from '../components/stage/StageHeader';
+import TableHighScoresPersonal from '../components/stage/TableHighScoresPersonal';
 
 function StagePersonal() {
   let { name, stage } = useParams();

@@ -1,4 +1,4 @@
-import TableChallenges from '../TableChallenges';
+import TableChallenges from './TableChallenges';
 
 export default function CurrentChallenges({allChallenges, name}) {
 

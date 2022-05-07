@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {ClassStringLong} from './ClassString';
+import {ClassStringLong} from '../ClassString';
 
 export default function TableHighScoresPersonal({entries}) {
   return (
