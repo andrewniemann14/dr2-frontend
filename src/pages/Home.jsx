@@ -21,7 +21,7 @@ export default function Home() {
 
   // TODO: add top 10 from leaderboard
   return (
-    <div className='bg-neutral-700 text-white min-h-screen lg:grid lg:grid-cols-6'>
+    <div className='lg:grid lg:grid-cols-6'>
       <HomeBanner />
       <br />
       <div className='lg:col-start-3 col-span-2 md:rounded-lg bg-neutral-800 shadow-lg border-t-2 md:border-2'>

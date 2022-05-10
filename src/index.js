@@ -8,28 +8,30 @@ import Profile from "./pages/Profile.jsx";
 import Leaderboard from './pages/Leaderboard';
 import Footer from './components/Footer';
 import NavBar from './components/navbar/NavBar';
+import Stages from './pages/Stages';
 import StageGlobal from './pages/StageGlobal';
 // import ChallengePersonal from './pages/ChallengePersonal';
 import StagePersonal from './pages/StagePersonal';
 import PlayerSelect from './pages/PlayerSelect';
+import Layout from './components/Layout';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <NavBar />
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="leaderboard" element={<Leaderboard />} />
-      <Route path="identify" element={<PlayerSelect />} />
-      <Route path="profile" element={<Profile />} />
-      <Route path="profile/:name" element={<Profile />} />
-      <Route path="challenge/:id" element={<Challenge />} />
-      <Route path="stage/:stage" element={<StageGlobal />} />
-      <Route path="profile/:name/stage/:stage" element={<StagePersonal />} />
-      {/* <Route path="profile/:name/challenge/:id" element={<ChallengePersonal />} /> */}
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="leaderboard" element={<Leaderboard />} />
+        <Route path="identify" element={<PlayerSelect />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="profile/:name" element={<Profile />} />
+        <Route path="challenge/:id" element={<Challenge />} />
+        <Route path="stages" element={<Stages />} />
+        <Route path="stage/:stage" element={<StageGlobal />} />
+        <Route path="profile/:name/stage/:stage" element={<StagePersonal />} />
+      </Route>
     </Routes>
-    <Footer />
-  </BrowserRouter>,
+  </BrowserRouter>
 );
 
 
