@@ -10,15 +10,13 @@ export default function NavBarMobile({name, changeName, clearCookie}) {
 
   function toggleOpen() {
     setOpen(!open);
-    console.log(open);
   }
 
   return (
     <>
-    <div className='w-full border-b-2 p-4 bg-neutral-900 text-white flex place-content-between'>
+    <div className='w-full border-b-2 p-4 bg-neutral-900 flex place-content-between'>
       <Link to="/" className='font-alfa-slab-one text-xl'>D<span className='text-red-700'>R</span><sup>2</sup></Link>
-      <Link to={`/profile`}><FontAwesomeIcon icon={solid('user')} className='text-xl' /></Link>
-      <FontAwesomeIcon icon={solid('bars')} onClick={toggleOpen} className='text-xl' />
+      <FontAwesomeIcon icon={solid('bars')} onClick={toggleOpen} className={`text-xl fixed top-2 right-2 z-50 bg-neutral-900 p-2 rounded-md ${open && 'text-red-600'}`} />
     </div>
     <MenuMobile name={name} changeName={changeName} clearCookie={clearCookie} open={open} />
 

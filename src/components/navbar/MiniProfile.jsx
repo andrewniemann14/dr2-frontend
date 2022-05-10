@@ -27,7 +27,6 @@ export default function MiniProfile({name, changeName, clearCookie}) {
   }
 
 
-  // TODO: convert to a drop down from the NavBar profile, which will be name+score
   return (
     <div className='bg-neutral-800 flex flex-col border-[1px] border-white p-4'>
       <Link to={`/profile`} className=''>

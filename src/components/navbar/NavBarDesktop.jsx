@@ -14,7 +14,7 @@ export default function NavBarDesktop({name, changeName, clearCookie}) {
 
   return (
     <div className=''>
-    <div className='w-full border-b-2 h-12 p-2 bg-neutral-900 text-white space-x-4 flex fixed top-0'>
+    <div className='w-full border-b-2 h-12 p-2 bg-neutral-900 space-x-4 flex fixed top-0 z-50 opacity-90'>
       <Link to="/" className='font-alfa-slab-one'>D<span className='text-red-700'>R</span><sup>2</sup></Link>
       <Link to="/leaderboard" className='hover:text-red-600'>Leaderboard</Link>
       <Link to="/stages" className='hover:text-red-600'>Stages</Link>
