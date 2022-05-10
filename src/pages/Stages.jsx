@@ -1,3 +1,5 @@
+// TODO: as with most table pages, mobile view is all messed up
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -59,7 +61,7 @@ export default function Stages() {
             })}
           </select>
         </div>
-        {/* TODO: entries getting added instead of replaced when personal is toggled */}
+        {/* TODO: entries are getting added instead of replaced when personal is toggled */}
         <input type="checkbox" onChange={() => setPersonal(!personal)} />
       </div>
       <TableHighScores entries={entries} allClasses={vehicleClass === 'all'} />
