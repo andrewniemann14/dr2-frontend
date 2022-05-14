@@ -7,8 +7,8 @@ module.exports = {
       fontFamily: {
         'alfa-slab-one': ['"Alfa Slab One"', 'cursive'],
         'faster-one': ['"Faster One"', 'cursive'],
-        'knewave': ['"Knewave"', 'cursive'],
         'oswald': ['"Oswald"', 'sans-serif'],
+        'yellowtail': ['"Yellowtail"', 'cursive'],
       }
     },
   },
