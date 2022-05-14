@@ -1,16 +1,16 @@
 export function CountryStringLong(country) {
   switch (country) {
-    case 'eLngArgentina':
+    case 'eArgentina':
       return 'Argentina'
-    case 'eLngAustralia':
+    case 'eAustralia':
       return 'Australia'
-    case 'eLngNewZealand':
+    case 'eNewZealand':
       return 'New Zealand'
-    case 'eLngPoland':
+    case 'ePoland':
       return 'Poland'
-    case 'eLngSpain':
+    case 'eSpain':
       return 'Spain'
-    case 'eLngUsa':
+    case 'eUsa':
       return 'USA'
     default:
       return '--'
@@ -19,17 +19,17 @@ export function CountryStringLong(country) {
 
 export function CountryStringShort(country) {
   switch (country) {
-    case 'eLngArgentina':
+    case 'eArgentina':
       return 'AR'
-    case 'eLngAustralia':
+    case 'eAustralia':
       return 'AU'
-    case 'eLngNewZealand':
+    case 'eNewZealand':
       return 'NZ'
-    case 'eLngPoland':
+    case 'ePoland':
       return 'PL'
-    case 'eLngSpain':
+    case 'eSpain':
       return 'ES'
-    case 'eLngUsa':
+    case 'eUsa':
       return 'US'
     default:
       return '--'
