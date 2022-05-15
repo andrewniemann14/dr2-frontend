@@ -24,11 +24,11 @@ export default function Home() {
     <div className='lg:grid lg:grid-cols-6'>
       <HomeBanner />
       <br />
-      <div className='lg:col-start-3 col-span-2 md:rounded-lg bg-neutral-800 shadow-lg border-t-2 md:border-2'>
-        <CurrentChallenges allChallenges={challenges} />
+      {/* TODO: check for database currency */}
+      <div className='lg:col-start-3 col-span-2 md:rounded-lg bg-neutral-800 shadow-lg border-t-2 md:border-2 p-4'>
+        <CurrentChallenges challenges={challenges.slice(0,2)} />
       </div>
-      <br />
-      <div className='lg:col-start-3 col-span-2 md:rounded-lg bg-neutral-800 shadow-lg border-t-2 md:border-2'>
+      <div className='mt-8 lg:col-start-3 col-span-2 md:rounded-lg bg-neutral-800 shadow-lg border-t-2 md:border-2'>
         <RecentChallenges allChallenges={challenges} />
       </div>
     </div>
