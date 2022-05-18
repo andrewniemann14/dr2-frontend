@@ -15,6 +15,7 @@ export default function CurrentChallenges({challenges, name}) {
       <h3 className='text-2xl text-center select-none text-cyan-600 mb-4'>Today's challenges</h3>
       {challenges.map(c => {
         return(
+          <div className="border-[1px]">
           <CurrentAccordionOuter key={`${c.id}`} vehicleClass={c.vehicle_class} stage={c.stage}>
             <div className='flex p-2 w-fit m-auto cursor-pointer' onClick={() => setExpanded(!expanded)}>
               <span className="w-20 text-xl font-kalam">{ClassStringLong(c.vehicle_class)}</span>
@@ -26,6 +27,7 @@ export default function CurrentChallenges({challenges, name}) {
               <FontAwesomeIcon icon={solid('chevron-down')} onClick={() => console.log('click')} className='cursor-pointer hover:text-red-600 ml-2 text-md' />
             </div>
           </CurrentAccordionOuter>
+          </div>
         )
       })}
     </>
