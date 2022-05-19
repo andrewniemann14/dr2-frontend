@@ -1,7 +1,7 @@
 // TODO: as with most table pages, mobile view is all messed up
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { classes, countries, stages } from '../components/data'
 import { ClassStringLong } from '../components/ClassString';
@@ -9,13 +9,16 @@ import { CountryStringLong } from '../components/CountryString';
 import StageHeader from '../components/stage/StageHeader';
 import TableHighScores from '../components/stage/TableHighScores';
 
+// state={{stage: c.stage}}
+
 export default function Stages() {
   const [country, setCountry] = useState('eLngArgentina');
   const [entries, setEntries] = useState([]);
   const [name, setName] = useState(localStorage.getItem('playerName'))
   const [personal, setPersonal] = useState(false)
-  const [stage, setStage] = useState(['Las Juntas']);
+  const [stage, setStage] = useState();
   const [vehicleClass, setVehicleClass] = useState('all');
+
 
   useEffect(() => {
     console.log('Stages useEffect() running');
