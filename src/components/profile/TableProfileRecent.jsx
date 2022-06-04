@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import {ClassStringLong} from '../ClassString';
 import { ScoreColorText } from '../ScoreColors';
+import '../../css/scrollbar.css'
 
 export default function TableProfileRecent({name, entries}) {
   
   return (
-    <table className='m-auto table-auto border-separate [border-spacing:0.75rem]'>
+    <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>
       <thead>
         <tr className='text-center'>
           <td>Challenge #</td>

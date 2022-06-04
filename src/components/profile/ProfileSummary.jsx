@@ -11,7 +11,7 @@ const tryRequire = (natString) => {
 
 export default function ProfileSummary({name, nationality, recentScore, points}) {
   return (
-    <div className="m-auto w-fit">
+    <div className="m-auto w-fit md:col-span-4 md:col-start-2">
       <div className='flex flex-col md:flex-row items-center p-2 m-auto'>
         <ScoreDisplay score={recentScore} points={points} />
         {/* name + details div */}

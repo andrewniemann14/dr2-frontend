@@ -6,7 +6,9 @@ export default function Layout({children}) {
   return (
     <div className="bg-neutral-700 text-white">
       <NavBar />
-      <div className="relative min-h-[calc(100vh-5rem)] mb-12 py-12"><Outlet /></div>
+      <div className="relative min-h-[calc(100vh-5rem)] mb-12 py-12">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   )

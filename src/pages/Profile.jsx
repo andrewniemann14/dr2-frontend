@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import {ClassStringLong} from '../components/ClassString';
+import { ClassStringLong } from '../components/ClassString';
+import { CountryStringLong } from '../components/CountryString'
 import { ScoreColorText } from '../components/ScoreColors';
 import ProfileSummary from '../components/profile/ProfileSummary';
 import TableProfileRecent from '../components/profile/TableProfileRecent';
@@ -78,56 +79,56 @@ export default function Profile() {
         setPoints(data[0].points);
       })
 
-  }, []);
+  }, [name]);
 
 
 
   return (
-    <div className='bg-neutral-700 text-white min-h-screen'>
+    <div className='text-white flex flex-col md:grid md:gap-1 md:grid-cols-4 lg:grid-cols-6'>
       <ProfileSummary name={name} nationality={nationality} recentScore={recentScore} points={points} />
 
-      <div className="flex flex-col md:flex-row content-start">
-      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2'>
-        <h3 className="text-2xl md:text-4xl text-center">Recent challenges</h3>
-        <TableProfileRecent name={name} entries={entries.slice(0, 10)} />
-      </div>
+      {/* <div className="flex flex-col md:flex-row md:col-span-3 md:col-start-2"> */}
+        <div className='md:rounded-lg bg-neutral-800 w-full shadow-lg p-4 border-t-2 md:border-t-0 md:h-80 overflow-scroll overflow-x-hidden md:col-start-2 md:col-span-2 lg:col-start-3 lg:col-span-2 md:row-start-2'>
+          <h3 className="text-2xl md:text-3xl text-center">Recent challenges</h3>
+          <TableProfileRecent name={name} entries={entries.slice(0, 10)} />
+          <Link to={`/profile/${name}/challenges`} className=''>All challenges</Link>
+        </div>
       
-      <Link to={`/profile/${name}/challenges`} className='m-auto'>All challenges</Link>
 
-      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2 p-4'>
-        <h3 className="text-4xl text-center">Class scores</h3>
-        <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
-        <tbody>
-          {classScores.map((c, i) => {
-            const color = ScoreColorText(c.score);
-            return (
-            <tr key={i}>
-              <td>{ClassStringLong(c.class)}</td>
-              <td className={`${color}`}>{c.score}</td>
-            </tr>
-            )
-          })}
-        </tbody>
-        </table>
-      </div>
+        <div className='md:rounded-lg bg-neutral-800 w-full shadow-lg border-t-2 md:border-t-0 md:h-80 overflow-scroll overflow-x-hidden p-4 md:col-start-1 lg:col-start-2 md:row-start-2'>
+          <h3 className="text-3xl text-center">Class scores</h3>
+          <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
+          <tbody>
+            {classScores.map((c, i) => {
+              const color = ScoreColorText(c.score);
+              return (
+              <tr key={i}>
+                <td>{ClassStringLong(c.class)}</td>
+                <td className={`${color}`}>{c.score}</td>
+              </tr>
+              )
+            })}
+          </tbody>
+          </table>
+        </div>
 
-      <div className='md:rounded-lg bg-neutral-800 w-full md:w-fit m-auto shadow-lg border-t-2 md:border-2 p-4'>
-        <h3 className="text-4xl text-center">Country scores</h3>
-        <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
-        <tbody>
-          {countryScores.map((c, i) => {
-            const color = ScoreColorText(c.score);
-            return (
-            <tr key={i}>
-              <td>{c.country}</td>
-              <td className={`${color}`}>{c.score}</td>
-            </tr>
-            )
-          })}
-        </tbody>
-        </table>
-      </div>
-      </div>
+        <div className='md:rounded-lg bg-neutral-800 w-full shadow-lg border-t-2 md:border-t-0 md:h-80 overflow-scroll overflow-x-hidden p-4 md:col-start-4 lg:col-start-5 md:row-start-2'>
+          <h3 className="text-3xl text-center">Country scores</h3>
+          <table className='m-auto table-auto border-separate [border-spacing:0.75rem] w-full'>          
+          <tbody>
+            {countryScores.map((c, i) => {
+              const color = ScoreColorText(c.score);
+              return (
+              <tr key={i}>
+                <td>{CountryStringLong(c.country)}</td>
+                <td className={`${color}`}>{c.score}</td>
+              </tr>
+              )
+            })}
+          </tbody>
+          </table>
+        </div>
+      {/* </div> */}
 
     </div>
   )
